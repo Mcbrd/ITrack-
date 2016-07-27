@@ -1,0 +1,105 @@
+1
+
+Func  is a Delegate that has a defined return type, Action is a delegate that returns void, Predicate is a delegate that returns a bool
+
+
+2
+List<int>numList = new List<int>
+
+public int NumberCruncher(List<int> input)
+{
+    input.ForEach((i) => { i; });
+
+    var numbersCount = input.Count(i);
+    var total = input.Sum(i);
+    return numbersCount +" "+ total;
+}
+
+
+3
+
+CREATE Schema bdm;
+
+Create TABLE bdm.City
+(
+string CityName(20) Constraint Primary Key;    Const PK?
+int CustomerID(20)
+);
+
+Create Table bdm.Customer
+(
+int CustomerID (20) Primary Key
+string CustomerName (20)
+double OrderAmount (20)
+);
+
+SELECT * Unique CityName from City
+Orderby CityName;
+
+4
+
+select CityName from City, Customer
+where City.CustomerID = Customer.CustomerID
+//and OrderAmount > OrderAmount
+orderby OrderAmount
+Take(1);
+
+5
+
+select CustomerName, sum(OrderAmount) from Customer
+where CustomerID = CustomerID
+Orderby sum(OrderAmount);
+
+6
+
+List<string> copyList = new List<string>()
+
+public List<string> Copier(List<string> input)
+        {
+            
+
+            foreach ( string i in input)
+            {
+                if(copyList.Contains(i))
+                    {
+                    return copyList;
+                    }
+                else
+                copyList.Add(i);
+            }
+
+                return copyList;
+        }
+
+7
+
+class Grade
+{
+    List<string> gradeListWord = new List<string>() { "90,100,82,89,55" };
+        List<int> gradeList = new List<int>();
+        List<double> multigradeList = new List<double>();
+
+
+        public void averager(List<string> input)
+        {
+            foreach(string i in input )
+            {
+                string[] word = i.Split(',');
+                foreach(string w in word)
+                {
+                    gradeList.Add(Convert.ToInt32(w));
+                    gradeList.Sort();
+
+                }
+                gradeList.RemoveAt(0);
+                double averageNum = gradeList.Average();
+                multiGradeList.Add(averageNum)
+                double classAverageGrade = multiGradeList.Average();
+            }
+        }
+    }
+}
+
+
+
+
